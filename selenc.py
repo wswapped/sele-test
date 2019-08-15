@@ -10,8 +10,7 @@ def getContent(url, method="GET", data = {}):
 	chrome_options = Options()
 	chrome_options.add_argument("--headless")
 	driver = webdriver.Chrome(chrome_options=chrome_options)
-
-	driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
+	
 	sys.stderr.write(url)
 	
 	# Directing the driver to the defined url
@@ -21,7 +20,7 @@ def getContent(url, method="GET", data = {}):
 		element = WebDriverWait(driver, 30).until(EC.url_changes("uplus.rw"))
 	finally:
 		driver.quit()
-		
+
 	cont = driver.page_source.encode("utf-8")
 	#driver.quit()
 	return cont
