@@ -10,7 +10,6 @@ def getContent(url, method="GET", data = {}):
 	chrome_options = Options()
 	chrome_options.add_argument("--headless")
 	driver = webdriver.Chrome(chrome_options=chrome_options)
-	
 	sys.stderr.write(url)
 	
 	# Directing the driver to the defined url
